@@ -24,7 +24,7 @@ public class ServletBook extends HttpServlet {
         listUser(request, response);
     }
 
-    private void listUser (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void gettBookList (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Book> listBook = bookDAO.selectAllBooks();
         request.setAttribute("bookList", listBook);
         RequestDispatcher dispatcher = request.getRequestDispatcher("booklist.jsp");
